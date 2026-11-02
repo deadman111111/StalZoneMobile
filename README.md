@@ -20,12 +20,14 @@ StalZone выходит только на ПК, и вне компьютера �
 
 Приоритеты функций (MoSCoW) и критерии приёмки — в [техническом задании](docs/02-tz.docx).
 
-## Источник данных и аппаратная функция
+## Архитектура и стек
 
+- **Приложение:** Kotlin, Jetpack Compose, Material 3, Clean Architecture (domain / data / presentation), MVVM с UiState, Hilt, Coroutines/Flow, Retrofit + kotlinx.serialization, Room, DataStore, SceneView, Kover.
+- **Сервер-посредник:** хранит ключи официального API (в APK их нет), кеширует ответы и ищет кланы по названию. Технологии и размещение сервера выбираются позже.
 - **Источники данных:** официальный API StalZone (EXBO), [открытая база предметов EXBO](https://github.com/EXBO-Studio/stalcraft-database).
-- **Аппаратная функция:** датчик вращения (гироскоп) для 3D-просмотра оружия.
+- **Аппаратная функция:** датчик вращения (гироскоп) для 3D-просмотра; доступ скрыт за интерфейсом `DeviceOrientationProvider`.
 
-Подробнее — в [карточке идеи](docs/01-idea.docx).
+Обоснование выбора — в [docs/03-stack.docx](docs/03-stack.docx).
 
 ## Документация
 
@@ -33,6 +35,7 @@ StalZone выходит только на ПК, и вне компьютера �
 |---|---|
 | [docs/01-idea.docx](docs/01-idea.docx) — карточка идеи, аналоги, ценность | 1 |
 | [docs/02-tz.docx](docs/02-tz.docx) — техническое задание, диаграмма вариантов использования | 2 |
+| [docs/03-stack.docx](docs/03-stack.docx) — выбор стека, архитектуры и серверной части | 3 |
 
 ## Этапы
 
